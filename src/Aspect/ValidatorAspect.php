@@ -27,12 +27,13 @@ class ValidatorAspect extends AbstractAspect
     ];
 
     private array $trans = [
-        'int' => 'integer'
+        'int' => 'integer',
+        'bool' => 'boolean'
     ];
 
     public function __construct(
         protected ValidatorFactoryInterface $validatorFactory,
-        protected RequestInterface $request
+        protected RequestInterface          $request
     )
     {
     }
