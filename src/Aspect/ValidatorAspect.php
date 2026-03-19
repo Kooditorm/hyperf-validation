@@ -6,8 +6,8 @@ namespace Kooditorm\Validation\Aspect;
 use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
-use Kooditorm\Validation\Annotations\Valid;
-use Kooditorm\Validation\Annotations\Validated;
+use Kooditorm\Validation\Annotation\Valid;
+use Kooditorm\Validation\Annotation\Validated;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\Validation\Contract\ValidatorFactoryInterface;
 
