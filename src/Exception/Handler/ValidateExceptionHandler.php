@@ -15,7 +15,6 @@ use Hyperf\ExceptionHandler\Annotation\ExceptionHandler as RegisterHandler;
 #[RegisterHandler(server: 'http')]
 class ValidateExceptionHandler extends ExceptionHandler
 {
-
     public function handle(Throwable $throwable, ResponseInterface $response): MessageInterface|ResponseInterface
     {
         if ($throwable instanceof ValidationException) {
