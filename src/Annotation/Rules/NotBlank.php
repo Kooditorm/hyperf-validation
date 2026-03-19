@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace kooditorm\Validation\Annotations\Rules;
+namespace Kooditorm\Validation\Annotations\Rules;
 
 use Attribute;
-use kooditorm\Validation\Annotations\ValidatorAnnotation;
+use Kooditorm\Validation\Annotations\ValidatorAnnotation;
 
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 class NotBlank extends ValidatorAnnotation

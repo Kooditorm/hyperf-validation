@@ -6,7 +6,7 @@ namespace Kooditorm\Validation\Exception\Handler;
 use Hyperf\Codec\Json;
 use Hyperf\ExceptionHandler\ExceptionHandler;
 use Hyperf\HttpMessage\Stream\SwooleStream;
-use kooditorm\Validation\Exception\ValidationException;
+use Kooditorm\Validation\Exception\ValidationException;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace kooditorm\Validation\Exception;
+namespace Kooditorm\Validation\Exception;
 
 use Throwable;
 
