@@ -8,6 +8,7 @@ use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
 use Kooditorm\Validation\Annotation\Valid;
 use Kooditorm\Validation\Annotation\Validated;
+use Kooditorm\Validation\Annotation\ValidatorAnnotation;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\Validation\Contract\ValidatorFactoryInterface;
 use ReflectionAttribute;
