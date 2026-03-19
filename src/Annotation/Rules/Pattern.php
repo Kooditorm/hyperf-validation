@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Annotation\Rule;
+namespace Kooditorm\Validation\Annotation\Rules;
 
 use Attribute;
 use Kooditorm\Validation\Annotation\ValidatorAnnotation;
