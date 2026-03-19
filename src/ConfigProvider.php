@@ -10,13 +10,6 @@ class ConfigProvider
     public function __invoke(): array
     {
         return [
-            'exceptions' => [
-                'handler' => [
-                    'http' => [
-                        ValidateExceptionHandler::class
-                    ]
-                ],
-            ],
             'annotations' => [
                 'scan' => [
                     'paths' => [
