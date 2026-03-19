@@ -112,7 +112,8 @@ class CreateUserRequest
 
 ```php
 #[PostMapping(path: "update")]
-public function update(#[Valid] UpdateUserRequest $request)
+#[Valid]
+public function update(UpdateUserRequest $request)
 {
     return ['message' => '更新成功'];
 }
@@ -314,28 +315,6 @@ class CustomValidateExceptionHandler extends \Hyperf\ExceptionHandler\AbstractEx
         return true;
     }
 }
-```
-
-## 配置
-
-发布配置文件（如果需要）：
-
-```bash
-php bin/hyperf.php vendor:publish kooditorm/hyperf-validation
-```
-
-配置项说明：
-
-```php
-// config/autoload/annotations.php
-return [
-    'scan' => [
-        'paths' => [
-            BASE_PATH . '/app',
-            BASE_PATH . '/vendor/kooditorm/hyperf-validation/src',
-        ],
-    ],
-];
 ```
 
 ## 工作原理
