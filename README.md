@@ -24,27 +24,42 @@ composer require kooditorm/hyperf-validation
 
 本库提供了丰富的验证注解，包括：
 
-- `Required` - 必填项
-- `Integer` - 整数
-- `Numeric` - 数字
-- `Between` - 范围验证
-- `Min` / `Max` - 最小/最大值
-- `Email` - 邮箱格式
-- `Url` - URL 格式
-- `Date` - 日期格式
-- `DateFormat` - 指定日期格式
-- `Boolean` - 布尔值
-- `Alpha` - 字母
-- `AlphaNum` - 字母和数字
-- `AlphaDash` - 字母、数字、破折号、下划线
-- `Image` - 图片文件
-- `Json` - JSON 格式
-- `Nullable` - 可为空
-- `In` - 在指定值中
-- `NotIn` - 不在指定值中
-- `Regex` - 正则表达式
-- `Unique` - 数据库唯一
-- `Exists` - 数据库存在
+- `NotBlank` - 必填项
+
+[//]: # (- `Integer` - 整数)
+
+[//]: # (- `Numeric` - 数字)
+
+[//]: # (- `Between` - 范围验证)
+
+[//]: # (- `Min` / `Max` - 最小/最大值)
+
+[//]: # (- `Email` - 邮箱格式)
+
+[//]: # (- `Url` - URL 格式)
+
+[//]: # (- `Date` - 日期格式)
+
+[//]: # (- `DateFormat` - 指定日期格式)
+
+[//]: # (- `Boolean` - 布尔值)
+
+[//]: # (- `Alpha` - 字母)
+
+[//]: # (- `AlphaNum` - 字母和数字)
+
+[//]: # (- `AlphaDash` - 字母、数字、破折号、下划线)
+
+[//]: # (- `Image` - 图片文件)
+
+[//]: # (- `Json` - JSON 格式)
+
+[//]: # (- `Nullable` - 可为空)
+
+[//]: # (- `In` - 在指定值中)
+
+[//]: # (- `NotIn` - 不在指定值中)
+- `Pattern` - 正则表达式
 
 ## 快速开始
 
