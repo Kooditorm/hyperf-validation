@@ -6,7 +6,7 @@ namespace Kooditorm\Validation\Annotation;
 use Attribute;
 use Hyperf\Di\Annotation\AbstractAnnotation;
 
-#[Attribute(Attribute::TARGET_METHOD | Attribute::TARGET_CLASS)]
+#[Attribute(Attribute::TARGET_METHOD)]
 class Validated extends AbstractAnnotation
 {
     public function __construct(

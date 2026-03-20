@@ -16,6 +16,36 @@ composer require kooditorm/hyperf-validation
 - 🎯 自动类型转换
 - 🌐 支持自定义错误消息
 
+## ✅ 数据验证
+
+### 内置验证注解
+
+> 需要先安装 Hyperf 验证器：`composer require hyperf/validation`
+
+本库提供了丰富的验证注解，包括：
+
+- `Required` - 必填项
+- `Integer` - 整数
+- `Numeric` - 数字
+- `Between` - 范围验证
+- `Min` / `Max` - 最小/最大值
+- `Email` - 邮箱格式
+- `Url` - URL 格式
+- `Date` - 日期格式
+- `DateFormat` - 指定日期格式
+- `Boolean` - 布尔值
+- `Alpha` - 字母
+- `AlphaNum` - 字母和数字
+- `AlphaDash` - 字母、数字、破折号、下划线
+- `Image` - 图片文件
+- `Json` - JSON 格式
+- `Nullable` - 可为空
+- `In` - 在指定值中
+- `NotIn` - 不在指定值中
+- `Regex` - 正则表达式
+- `Unique` - 数据库唯一
+- `Exists` - 数据库存在
+
 ## 快速开始
 
 ### 1. 基础用法
@@ -37,7 +67,7 @@ class UserController
 {
     #[PostMapping(path: "create")]
     #[Validated(instance: CreateUserRequest::class)]
-    public function create(CreateUserRequest $request)
+    public function create()
     {
         // 验证通过后的业务逻辑
         return ['message' => '创建成功'];
@@ -249,23 +279,6 @@ class RegisterRequest
     #[NotBlank(message: '密码不能为空')]
     #[Pattern(value: '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/', message: '密码必须包含字母和数字，且长度不少于 6 位')]
     private string $password;
-}
-```
-
-### 在类级别使用 Validated
-
-可以在类级别使用 `#[Validated]` 注解：
-
-```php
-#[Validated(instance: CreateOrderRequest::class)]
-#[Controller(prefix: "order")]
-class OrderController
-{
-    #[PostMapping(path: "create")]
-    public function create()
-    {
-        // 自动验证 CreateOrderRequest
-    }
 }
 ```
 
