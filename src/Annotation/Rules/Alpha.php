@@ -11,7 +11,7 @@ use Kooditorm\Validation\Annotation\ValidatorAnnotation;
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 class Alpha extends ValidatorAnnotation
 {
-    public function __construct(public string $message = '')
+    public function __construct(public string $value = 'ascii', public string $message = '')
     {
 
     }
