@@ -6,17 +6,18 @@ use Attribute;
 use Kooditorm\Validation\Annotation\ValidatorAnnotation;
 
 /**
- * 正在验证的字段必须是 no、off、0 或者 false。
+ * 验证字段必须是基于 PHP 函数 dns_get_record 的，有 A 或 AAAA 记录的值。
  */
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
-class Declined extends ValidatorAnnotation
+class ActiveUrl extends ValidatorAnnotation
 {
+
     public function __construct(public string $message = '')
     {
     }
 
     public function rule(): string
     {
-        return 'declined';
+       return 'active_url';
     }
 }
