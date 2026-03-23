@@ -18,6 +18,6 @@ class Pattern extends ValidatorAnnotation
 
     public function rule(): string
     {
-        return 'regex:{$value}';
+        return 'regex:{value}';
     }
 }

@@ -99,7 +99,7 @@ class ValidatorAspect extends AbstractAspect
                 $value = $instance->value ?? '';
                 $message = $instance->message ?? '';
                 if (!empty($rule) && !empty($value)) {
-                    $rule = str_replace('{$value}', $value, $rule);
+                    $rule = str_replace('{value}', $value, $rule);
                 }
                 $rules[$propertyName][] = $rule;
 
