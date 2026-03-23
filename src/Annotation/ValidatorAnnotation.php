@@ -7,4 +7,6 @@ use Hyperf\Di\Annotation\AbstractAnnotation;
 
 abstract class ValidatorAnnotation extends AbstractAnnotation
 {
+
+    abstract public function rule():string;
 }
