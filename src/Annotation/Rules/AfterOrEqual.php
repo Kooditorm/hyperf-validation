@@ -17,6 +17,6 @@ class AfterOrEqual extends ValidatorAnnotation
 
     public function rule(): string
     {
-        return 'after_or_equal';
+        return 'after_or_equal:{value}';
     }
 }
