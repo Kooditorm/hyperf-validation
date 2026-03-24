@@ -7,9 +7,9 @@ use Hyperf\Di\Annotation\AbstractAnnotation;
 
 abstract class ValidatorAnnotation extends AbstractAnnotation
 {
-
     public function rule(): string
     {
-        return (new \ReflectionClass(static::class))->getShortName();
+        $ref = new \ReflectionClass(static::class);
+        return mb_strtolower($ref->getShortName());
     }
 }
