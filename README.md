@@ -30,6 +30,20 @@ composer require kooditorm/hyperf-validation
 | `regex`    | `Pattern`  |
 | `array`    | `IsArray`  |
 
+支持验证規則：
+```text
+accepted、accepted_if
+declined、declined_if
+active_url
+after、after_or_equal
+before、before_or_equal
+alpha、alpha_dash、alpha_num
+ascii
+array、required_array_keys
+```
+
+
+
 特殊用法说明
 IsArray(value:1,2,3)
 
