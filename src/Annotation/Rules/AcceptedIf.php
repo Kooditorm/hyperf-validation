@@ -18,6 +18,6 @@ class AcceptedIf extends ValidatorAnnotation
 
     public function rule(): string
     {
-        return 'accepted_if:{value}';
+        return 'accepted_if';
     }
 }

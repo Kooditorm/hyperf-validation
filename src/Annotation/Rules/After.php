@@ -25,6 +25,6 @@ class After extends ValidatorAnnotation
 
     public function rule():string
     {
-        return 'after:{value}';
+        return 'after';
     }
 }

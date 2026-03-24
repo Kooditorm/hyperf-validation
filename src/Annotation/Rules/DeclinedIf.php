@@ -18,6 +18,6 @@ class DeclinedIf extends ValidatorAnnotation
 
     public function rule(): string
     {
-        return 'declined:{value}';
+        return 'declined';
     }
 }

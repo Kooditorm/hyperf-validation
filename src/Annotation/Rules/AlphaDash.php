@@ -17,6 +17,6 @@ class AlphaDash extends Alpha
 
     public function rule():string
     {
-        return 'alpha_dash:{value}';
+        return 'alpha_dash';
     }
 }

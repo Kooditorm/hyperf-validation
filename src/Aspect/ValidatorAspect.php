@@ -95,11 +95,19 @@ class ValidatorAspect extends AbstractAspect
             $attributes = $property->getAttributes(ValidatorAnnotation::class, ReflectionAttribute::IS_INSTANCEOF);
             foreach ($attributes as $attribute) {
                 $instance = $attribute->newInstance();
-                $rule = $instance->rule();
+                if (method_exists($instance, 'rule')) {
+                    $rule = $instance->rule();
+                } else {
+                    $rule = $instance->rule ?? '';
+                }
+
+                if (empty($rule)) {
+                    continue;
+                }
                 $value = $instance->value ?? '';
                 $message = $instance->message ?? '';
-                if (!empty($rule) && !empty($value)) {
-                    $rule = str_replace('{value}', $value, $rule);
+                if (!empty($value)) {
+                    $rule .= ':' . $value;
                 }
                 $rules[$propertyName][] = $rule;
 

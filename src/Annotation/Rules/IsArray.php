@@ -24,6 +24,6 @@ class IsArray extends ValidatorAnnotation
 
     public function rule():string
     {
-        return 'array|{value}';
+        return 'array';
     }
 }

@@ -21,6 +21,6 @@ class Alpha extends ValidatorAnnotation
 
     public function rule(): string
     {
-        return 'alpha:{value}';
+        return 'alpha';
     }
 }

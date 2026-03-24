@@ -17,6 +17,6 @@ class AlphaNum extends Alpha
 
     public function rule():string
     {
-        return 'alpha_num:{value}';
+        return 'alpha_num';
     }
 }
