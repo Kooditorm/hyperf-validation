@@ -24,42 +24,47 @@ composer require kooditorm/hyperf-validation
 
 本库提供了丰富的验证注解，包括：
 
-- `NotBlank` - 必填项
+| 框架规则       | 使用规则       |   
+|------------|------------|
+| `required` | `NotBlank` |
+| `regex`    | `Pattern`  |
+| `array`    | `IsArray`  |
 
-[//]: # (- `Integer` - 整数)
+特殊用法说明
+IsArray(value:1,2,3)
 
-[//]: # (- `Numeric` - 数字)
+```text
+框架用法： 'name' => "array:1,2,3"
+验证结果： 当验证规则存在参数，验证数组的键必须存在一个或多个参数包含的值，且不能出现不存在的键
+```
 
-[//]: # (- `Between` - 范围验证)
+| 验证的数组                                   | 结果    |   
+|-----------------------------------------|-------|
+| "name": {"1": 1, "4": 2}                | false |
+| "name": {"1": 1, "2": 2}                | true  |
+| "name":  {"1": 1, "2": 2, "3":3}        | true  |
+| "name":  {"1": 1, "2": 2, "4":3}        | false |
+| "name":  {"1": 1, "2": 2, "3":3, "4":4} | false |
 
-[//]: # (- `Min` / `Max` - 最小/最大值)
+RequiredArrayKeys(value:1,2,3)
 
-[//]: # (- `Email` - 邮箱格式)
+```text
+框架用法： 'name' => "required_array_keys:a,b,c"
+原文檔描述：验证的字段必须是一个数组，并且必须至少包含指定的键。
+验证结果： 验证的字段必须是一个数组，并且必须包含所有的键。
+```
 
-[//]: # (- `Url` - URL 格式)
+| 验证的数组                                        | 结果    |   
+|----------------------------------------------|-------|
+| "name": {"a": "1","b": "b"}                  | false |
+| "name":  {"a": "1","b": "b","c":"c"}         | true  |
+| "name":  {"a": "1","b": "b","d":"c"}         | false |
+| "name":  {"a": "1","b": "b","c":"c","d":"d"} | false |
 
-[//]: # (- `Date` - 日期格式)
+备注：
 
-[//]: # (- `DateFormat` - 指定日期格式)
-
-[//]: # (- `Boolean` - 布尔值)
-
-[//]: # (- `Alpha` - 字母)
-
-[//]: # (- `AlphaNum` - 字母和数字)
-
-[//]: # (- `AlphaDash` - 字母、数字、破折号、下划线)
-
-[//]: # (- `Image` - 图片文件)
-
-[//]: # (- `Json` - JSON 格式)
-
-[//]: # (- `Nullable` - 可为空)
-
-[//]: # (- `In` - 在指定值中)
-
-[//]: # (- `NotIn` - 不在指定值中)
-- `Pattern` - 正则表达式
+1. 具体规则请查看 [Hyperf 验证器文档](https://hyperf.wiki/2.2/#/zh-cn/validation)。
+2. 除上述表格外，其他均为常规调用方法。 常规调用为规则名称的大驼峰，如 `Accepted`、`AcceptedIf`。
 
 ## 快速开始
 
@@ -188,6 +193,7 @@ class UserRequest
 ```
 
 **支持的类型转换：**
+
 - `int` → `integer`
 - 其他 PHP 类型保持原名
 
@@ -205,6 +211,7 @@ private string $field;
 ```
 
 参数说明：
+
 - `message`: 错误消息
 - `rule`: 验证规则（默认 `required`）
 - `filed`: 字段名（可选）
@@ -224,6 +231,7 @@ private string $phone;
 ```
 
 参数说明：
+
 - `value`: 正则表达式模式
 - `message`: 错误消息
 - `rule`: 验证规则（默认 `regex:{$value}`）
