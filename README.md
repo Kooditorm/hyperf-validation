@@ -42,6 +42,9 @@ ascii
 array、required_array_keys
 between
 confirmed
+data、date_equals、date_format
+decimal
+lowercase、uppercase、mac_address
 ```
 
 
