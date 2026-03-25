@@ -41,6 +41,7 @@ alpha、alpha_dash、alpha_num
 ascii
 array、required_array_keys
 between
+confirmed
 ```
 
 
