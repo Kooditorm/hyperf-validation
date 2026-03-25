@@ -47,7 +47,7 @@ decimal
 lowercase、uppercase、mac_address
 digits、digits_between、max_digits、min_digits
 email
-file
+file、image
 ```
 
 
