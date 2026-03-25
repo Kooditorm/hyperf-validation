@@ -29,10 +29,8 @@ composer require kooditorm/hyperf-validation
 | `required` | `NotBlank` |
 | `regex`    | `Pattern`  |
 | `array`    | `IsArray`  |
-| `decimal`  | `Digits`   |
 
 支持验证規則：
-
 ```text
 accepted、accepted_if
 declined、declined_if
@@ -45,8 +43,11 @@ array、required_array_keys
 between
 confirmed
 data、date_equals、date_format
+decimal
 lowercase、uppercase、mac_address
 ```
+
+
 
 特殊用法说明
 IsArray(value:1,2,3)
