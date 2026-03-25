@@ -45,6 +45,7 @@ confirmed
 data、date_equals、date_format
 decimal
 lowercase、uppercase、mac_address
+digits、digits_between、max_digits、min_digits
 ```
 
 
