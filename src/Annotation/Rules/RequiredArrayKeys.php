@@ -17,9 +17,4 @@ class RequiredArrayKeys extends ValidatorAnnotation
     {
 
     }
-
-    public function rule(): string
-    {
-        return 'required_array_keys';
-    }
 }

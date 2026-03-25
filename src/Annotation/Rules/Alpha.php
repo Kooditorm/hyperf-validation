@@ -18,9 +18,4 @@ class Alpha extends ValidatorAnnotation
     {
 
     }
-
-    public function rule(): string
-    {
-        return 'alpha';
-    }
 }

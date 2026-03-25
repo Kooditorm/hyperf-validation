@@ -16,9 +16,4 @@ class Before extends ValidatorAnnotation
     {
     }
 
-    public function rule():string
-    {
-        return 'before';
-    }
-
 }

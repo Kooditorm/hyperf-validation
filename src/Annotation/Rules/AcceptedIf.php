@@ -15,9 +15,4 @@ class AcceptedIf extends ValidatorAnnotation
     public function __construct(public string $value, public string $message = '')
     {
     }
-
-    public function rule(): string
-    {
-        return 'accepted_if';
-    }
 }

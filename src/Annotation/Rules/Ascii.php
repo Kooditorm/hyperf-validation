@@ -14,9 +14,4 @@ class Ascii extends ValidatorAnnotation
     {
 
     }
-
-    public function rule(): string
-    {
-        return 'ascii';
-    }
 }

@@ -14,9 +14,4 @@ use Attribute;
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 class AlphaDash extends Alpha
 {
-
-    public function rule():string
-    {
-        return 'alpha_dash';
-    }
 }

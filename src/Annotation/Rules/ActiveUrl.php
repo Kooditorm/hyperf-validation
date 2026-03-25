@@ -16,9 +16,4 @@ class ActiveUrl extends ValidatorAnnotation
     public function __construct(public string $message = '')
     {
     }
-
-    public function rule(): string
-    {
-       return 'active_url';
-    }
 }

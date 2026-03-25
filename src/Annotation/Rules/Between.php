@@ -16,9 +16,4 @@ class Between extends ValidatorAnnotation
     {
 
     }
-
-    public function rule():string
-    {
-        return 'between';
-    }
 }
