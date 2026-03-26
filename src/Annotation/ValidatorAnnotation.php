@@ -8,6 +8,11 @@ use Hyperf\Stringable\StrCache;
 
 abstract class ValidatorAnnotation extends AbstractAnnotation
 {
+    public function __construct(public string $value = '', public string $message = '')
+    {
+    }
+
+
     public function rule(): string
     {
         $ref = new \ReflectionClass(static::class);

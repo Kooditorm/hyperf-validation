@@ -16,12 +16,6 @@ use Kooditorm\Validation\Annotation\ValidatorAnnotation;
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 class IsArray extends ValidatorAnnotation
 {
-
-    public function __construct(public string $value = '', public string $message = '')
-    {
-
-    }
-
     public function rule():string
     {
         return 'array';
