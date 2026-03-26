@@ -31,6 +31,10 @@ class ValidatorAspect extends AbstractAspect
         'bool' => 'boolean'
     ];
 
+    private array $allowType = [
+        'int', 'bool', 'string', 'array'
+    ];
+
     public function __construct(
         protected ValidatorFactoryInterface $validatorFactory,
         protected RequestInterface          $request
@@ -85,11 +89,15 @@ class ValidatorAspect extends AbstractAspect
         foreach ($reflectionClass->getProperties() as $property) {
             $propertyName = $property->getName();
             $type = $property->getType();
-            $typeName = $this->trans[$type->getName()] ?? $type->getName();
-            $rules[$propertyName][] = $typeName;
 
-            if ($type->allowsNull()) {
-                $rules[$propertyName][] = 'nullable';
+            //只支持单一类型自动验证
+            if ($type instanceof \ReflectionNamedType && in_array($type->getName(), $this->allowType, true)) {
+                $typeName = $this->trans[$type->getName()] ?? $type->getName();
+                $rules[$propertyName][] = $typeName;
+
+                if ($type->allowsNull()) {
+                    $rules[$propertyName][] = 'nullable';
+                }
             }
 
             $attributes = $property->getAttributes(ValidatorAnnotation::class, ReflectionAttribute::IS_INSTANCEOF);
