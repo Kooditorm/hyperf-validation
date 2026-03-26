@@ -48,12 +48,14 @@ lowercase、uppercase、mac_address
 digits、digits_between、max_digits、min_digits
 email
 file、image
-in、in_array
+in、in_array、not_in
 gt、 gte、lt、lte
-max、min
+max、min、size
+mines、minestypes
+Same
+Url
+Uuid
 ```
-
-
 
 特殊用法说明
 IsArray(value:1,2,3)
@@ -90,6 +92,7 @@ RequiredArrayKeys(value:1,2,3)
 
 1. 具体规则请查看 [Hyperf 验证器文档](https://hyperf.wiki/2.2/#/zh-cn/validation)。
 2. 除上述表格外，其他均为常规调用方法。 常规调用为规则名称的大驼峰，如 `Accepted`、`AcceptedIf`。
+3. 上述支持的规则没有出现的请使用 #[Validate(rule: 'regex', value: '/^1[3456789]\d{9}$/', message: '手机号码不正确')]]
 
 ## 快速开始
 
