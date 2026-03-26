@@ -50,6 +50,7 @@ email
 file、image
 in、in_array
 gt、 gte、lt、lte
+max、min
 ```
 
 
