@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Annotation\Rules;
+namespace Kooditorm\Hyperf\Validation\Annotation\Rules;
 
 use Attribute;
-use Kooditorm\Validation\Annotation\BaseRules;
+use Kooditorm\Hyperf\Validation\Annotation\BaseRules;
 
 /**
  * 验证字段值必须在给定的列表中

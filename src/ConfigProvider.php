@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation;
+namespace Kooditorm\Hyperf\Validation;
 
-use Kooditorm\Validation\Exception\Handler\ValidateExceptionHandler;
 
 class ConfigProvider
 {

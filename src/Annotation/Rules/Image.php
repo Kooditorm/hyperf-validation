@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Annotation\Rules;
+namespace Kooditorm\Hyperf\Validation\Annotation\Rules;
 
 use Attribute;
-use Kooditorm\Validation\Annotation\ValidatorAnnotation;
+use Kooditorm\Hyperf\Validation\Annotation\ValidatorAnnotation;
 
 /**
  * 验证文件必须是图片（'jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp'）。

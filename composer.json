@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kooditorm\\Validation\\": "src/"
+            "Kooditorm\\Hyperf\\Validation\\": "src/"
         }
     },
     "extra": {
         "hyperf": {
-            "config": "Kooditorm\\Validation\\ConfigProvider"
+            "config": "Kooditorm\\Hyperf\\Validation\\ConfigProvider"
         }
     }
 }

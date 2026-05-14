@@ -1,11 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Exception;
+namespace Kooditorm\Hyperf\Validation\Exception;
 
+use RuntimeException;
 use Throwable;
 
-class ValidationException extends \RuntimeException
+class ValidationException extends RuntimeException
 {
     public function __construct(
         string     $message = '',

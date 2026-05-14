@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Annotation\Rules;
+namespace Kooditorm\Hyperf\Validation\Annotation\Rules;
 
 
 use Attribute;

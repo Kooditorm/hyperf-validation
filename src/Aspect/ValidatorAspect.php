@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Aspect;
+namespace Kooditorm\Hyperf\Validation\Aspect;
 
 use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
-use Kooditorm\Validation\Annotation\Valid;
-use Kooditorm\Validation\Annotation\Validated;
-use Kooditorm\Validation\Annotation\ValidatorAnnotation;
-use Kooditorm\Validation\Exception\ValidationException;
+use Kooditorm\Hyperf\Validation\Annotation\Valid;
+use Kooditorm\Hyperf\Validation\Annotation\Validated;
+use Kooditorm\Hyperf\Validation\Annotation\ValidatorAnnotation;
+use Kooditorm\Hyperf\Validation\Exception\ValidationException;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\Validation\Contract\ValidatorFactoryInterface;
 use ReflectionAttribute;

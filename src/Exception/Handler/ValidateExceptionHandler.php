@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Exception\Handler;
+namespace Kooditorm\Hyperf\Validation\Exception\Handler;
 
 use Hyperf\Codec\Json;
 use Hyperf\ExceptionHandler\ExceptionHandler;
 use Hyperf\HttpMessage\Stream\SwooleStream;
-use Kooditorm\Validation\Exception\ValidationException;
+use Kooditorm\Hyperf\Validation\Exception\ValidationException;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Annotation;
+namespace Kooditorm\Hyperf\Validation\Annotation;
 
 use Hyperf\Di\Annotation\AbstractAnnotation;
 use Hyperf\Stringable\StrCache;

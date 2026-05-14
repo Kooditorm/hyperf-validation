@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Kooditorm\Validation\Annotation\Rules;
+namespace Kooditorm\Hyperf\Validation\Annotation\Rules;
 
 use Attribute;
-use Kooditorm\Validation\Annotation\BaseRules;
+use Kooditorm\Hyperf\Validation\Annotation\BaseRules;
 
 /**
  * 验证文件必须匹配给定的 MIME 文件类型之一

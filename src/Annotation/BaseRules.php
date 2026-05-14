@@ -1,6 +1,6 @@
 <?php
 
-namespace Kooditorm\Validation\Annotation;
+namespace Kooditorm\Hyperf\Validation\Annotation;
 
 class BaseRules extends ValidatorAnnotation
 {

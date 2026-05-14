@@ -108,7 +108,7 @@ namespace App\Controller;
 
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\PostMapping;
-use Kooditorm\Validation\Annotation\Validated;
+use Kooditorm\Hyperf\Validation\Annotation\Validated;
 
 #[Controller(prefix: "user")]
 class UserController
@@ -133,8 +133,8 @@ declare(strict_types=1);
 
 namespace App\Request;
 
-use Kooditorm\Validation\Annotation\Rules\NotBlank;
-use Kooditorm\Validation\Annotation\Rules\Pattern;
+use Kooditorm\Hyperf\Validation\Annotation\Rules\NotBlank;
+use Kooditorm\Hyperf\Validation\Annotation\Rules\Pattern;
 
 class CreateUserRequest
 {
@@ -232,7 +232,7 @@ class UserRequest
 必填项验证：
 
 ```php
-use Kooditorm\Validation\Annotation\Rules\NotBlank;
+use Kooditorm\Hyperf\Validation\Annotation\Rules\NotBlank;
 
 #[NotBlank(message: '此项为必填项')]
 private string $field;
@@ -249,7 +249,7 @@ private string $field;
 正则表达式验证：
 
 ```php
-use Kooditorm\Validation\Annotation\Rules\Pattern;
+use Kooditorm\Hyperf\Validation\Annotation\Rules\Pattern;
 
 #[Pattern(
     value: '/^\d{11}$/', 
@@ -276,7 +276,7 @@ declare(strict_types=1);
 namespace App\Validation\Rules;
 
 use Attribute;
-use Kooditorm\Validation\Annotation\ValidatorAnnotation;
+use Kooditorm\Hyperf\Validation\Annotation\ValidatorAnnotation;
 
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 class MaxLength extends ValidatorAnnotation
@@ -345,33 +345,29 @@ class RegisterRequest
 <?php
 declare(strict_types=1);
 
-namespace App\Exception\Handler;
+namespace Kooditorm\Hyperf\Validation\Exception\Handler;
 
+use Hyperf\Codec\Json;
+use Hyperf\ExceptionHandler\ExceptionHandler;
 use Hyperf\HttpMessage\Stream\SwooleStream;
-use Kooditorm\Validation\Exception\ValidationException;
+use Kooditorm\Hyperf\Validation\Exception\ValidationException;
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Throwable;
+use Hyperf\ExceptionHandler\Annotation\ExceptionHandler as RegisterHandler;
 
-class CustomValidateExceptionHandler extends \Hyperf\ExceptionHandler\AbstractExceptionHandler
+#[RegisterHandler(server: 'http')]
+class ValidateExceptionHandler extends ExceptionHandler
 {
-    protected array $ignore = [
-        ValidationException::class,
-    ];
-
-    public function handle(Throwable $throwable, ServerRequestInterface $request): ResponseInterface
+    public function handle(Throwable $throwable, ResponseInterface $response): MessageInterface|ResponseInterface
     {
         if ($throwable instanceof ValidationException) {
-            return $this->response->json([
-                'code' => 422,
-                'message' => $throwable->getMessage(),
-                'data' => null,
-            ])->withStatus(422);
+            return $response->withStatus(200)->withHeader('Content-Type', 'application/json')->withBody(new SwooleStream(Json::encode([
+                'code' => $throwable->getCode(),
+                'message' => $throwable->getMessage()
+            ])));
         }
-        
-        return $this->response->json([
-            'code' => 500,
-            'message' => '服务器内部错误',
-        ])->withStatus(500);
+        return $response;
     }
 
     public function isValid(Throwable $throwable): bool
